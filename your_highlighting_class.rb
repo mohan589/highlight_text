@@ -12,7 +12,7 @@ class YourHighlightingClass
       data = item.split(' ')
       @highlights.each do |key, value|
         sub_data = data[key[:start_word]..key[:end_word]]
-        colorize_data = "<span style=\"color:#{random_color};font-weight:bold\">" + sub_data.join(' ') + "</span>"  unless sub_data.nil?
+        colorize_data = "<span style=\"color:#{random_color};font-weight:bold\">" + sub_data.join(' ') + "</span>" + "<span class=\"tooltiptext\">" + sub_data.join(' ') + "</span>" unless sub_data.nil?
         data[key[:start_word], key[:end_word]] = colorize_data
       end
       result = result + "<p class=\"tooltip\">" + data.join(' ') + "</p>"
